@@ -177,12 +177,14 @@ button {
 .nav{
     position: relative;
     width: 100%;
-    padding: 4px 4px 0px 4px;
+    padding: 4px 4px 4px 4px;
     margin: 4px 18px;
+}
+.nav:hover{
+    border-bottom: 2px solid black;
 }
 .nav a{
     text-decoration: none;
-    justify-content: center;
     color: black;
     font-size: 18px;
     white-space: nowrap;
@@ -295,34 +297,65 @@ button {
 }
 .slider-container{
     display: flex;
-    gap:20px;
+    gap:10px;
     overflow: hidden;
     width: 100%;
+    position: relative;
+}
+.slider-container .prev{
+    position: absolute;
+    left:10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 2px solid black;
+    background: transparent;
+    box-shadow: 0px 10px 10px rgba(0,0,0,0.6);
+    z-index: 100;
+}
+.prev i{
+    color: black;
+    font-size: 18px;
+}
+.slider-container .next{
+    position: absolute;
+    right:10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 2px solid black;
+    background: transparent;
+    box-shadow: 0px 10px 10px rgba(0,0,0,0.6);
+    z-index: 100;
+}
+.next i{
+    color: black;
+    font-size: 18px;
+}
+.slides{
+    display: flex;
+    gap:10px;
+    overflow: hidden;
+    flex-basis: 25%;
+    flex-grow: 1;
 }
 .slider{
-    flex-grow: 1;
-    transition: flex-grow 0.3s ease;
+    /* flex: 1; */
+    /* transition: flex-grow 0.3s ease; */
     position: relative;
     display: flex;
     height: 350px;
+    flex-basis: 25%;
 }
-.slider:hover{
+/* .slider:hover{
     flex-grow: 3;
     cursor: pointer;
-}
+} */
 .slider img{
+    /* flex-basis: 25%; */
     aspect-ratio: 4/3;
     width: 100%;
     border-radius: 20px;
     transition: transform 0.3s ease-in-out;
 }
-.slider:hover img{
-    transform: scale(5);
-    width: 100%;
-    /* height: 600px; */
-    z-index: 2;
-}
-
 .slider h2{
     margin: 0;
     position: absolute;
@@ -330,6 +363,6 @@ button {
     bottom: 10px;
     color: rgb(83, 232, 9);
 }
-.slider img:hover{
+/* .slider img:hover{
     flex-grow: 2;
-}
+} */

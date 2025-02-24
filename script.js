@@ -9,3 +9,4 @@ for (let i = 0; i < elements.length; i++) {
         changingWord.innerHTML=arr[i];
     });
 }
+
