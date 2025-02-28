@@ -297,7 +297,6 @@ button {
 }
 .slider-container{
     display: flex;
-    gap:10px;
     overflow: hidden;
     width: 100%;
     position: relative;
@@ -310,7 +309,7 @@ button {
     border: 2px solid black;
     background: transparent;
     box-shadow: 0px 10px 10px rgba(0,0,0,0.6);
-    z-index: 100;
+    z-index: 10;
 }
 .prev i{
     color: black;
@@ -330,39 +329,114 @@ button {
     color: black;
     font-size: 18px;
 }
-.slides{
+.slides {
     display: flex;
-    gap:10px;
+    transition: transform 0.5s ease-in-out;
+    gap: 15px;
+    width: 100%; /* Adjust based on number of images */
+}
+
+.slider {
+    min-width: 24%;
     overflow: hidden;
-    flex-basis: 25%;
-    flex-grow: 1;
-}
-.slider{
-    /* flex: 1; */
-    /* transition: flex-grow 0.3s ease; */
     position: relative;
-    display: flex;
-    height: 350px;
-    flex-basis: 25%;
+    
 }
-/* .slider:hover{
-    flex-grow: 3;
-    cursor: pointer;
-} */
-.slider img{
-    /* flex-basis: 25%; */
-    aspect-ratio: 4/3;
+
+.slider img {
     width: 100%;
-    border-radius: 20px;
-    transition: transform 0.3s ease-in-out;
+    height: auto;
+    display: block;
+    border-radius: 15px;
+    
 }
 .slider h2{
-    margin: 0;
     position: absolute;
-    left:10px;
+    left: 10px;
     bottom: 10px;
-    color: rgb(83, 232, 9);
+    display: flex;
+    width: auto;
+    margin: 0px;
 }
-/* .slider img:hover{
-    flex-grow: 2;
-} */
+.review-container{
+    display: flex;
+    margin-top: 10%;
+    width: 100%;
+    /* border: 5px solid blue; */
+    flex-direction: column;
+}
+.text-review{
+    display: block;
+    padding: 0px;
+    width: 98%;
+}
+.text-review h2{
+    font-size: 26px;
+    margin-bottom: 5px;
+}
+.text-review p{
+    font-size: 18px;
+    margin-top: 5px;
+}
+.review-box{
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    overflow: hidden;
+    
+}
+.review{
+    min-width: 33%;
+    overflow: hidden;
+    position: relative;
+}
+.review img{
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 15px;
+}
+.review p{
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+}
+.review a{
+    text-decoration: none;
+    color: #000;
+}
+.review a:hover{
+    color: grey;
+    text-decoration: underline;
+}
+.review i{
+    left: 50%;
+    position: absolute;
+
+}
+.footer-container{
+    background-color:#e8e8d8;
+    margin-top: 40px;
+    display: flex;
+    width: 120%;
+    margin-left: -130px;
+    justify-content: space-around;
+}
+.footer-sep{
+    flex: 1;
+}
+#row-wise-sep{
+    display: flex;
+    padding: 20px;
+}
+.sub-column{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+.sub-column a{
+    justify-content: center;
+    text-decoration: none;
+    color:black;
+    line-height: 1.5;
+}
