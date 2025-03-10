@@ -101,61 +101,6 @@ button {
     border-radius: 5px;
     cursor: pointer;
 }
-
-/* 🔽 MEDIA QUERIES FOR RESPONSIVENESS */
-
-/* Tablet View (Below 768px) */
-@media screen and (max-width: 768px) {
-    header {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .column ul {
-        gap: 10px;
-        font-size: 14px;
-    }
-
-    button {
-        padding: 6px 12px;
-    }
-    .nestedCol {
-        display: none;
-    }
-}
-
-/* Mobile View (Below 600px) */
-@media screen and (max-width: 600px) {
-    header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .column {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .column ul {
-        flex-direction: column;
-        padding: 10px 0;
-    }
-
-    .column img {
-        width: 150px; /* Reduce logo size */
-    }
-
-    
-
-    button {
-        width: 100%;
-        padding: 10px;
-    }
-    
-}
-
-
 #Dynamic-content{
     display: flex;
     justify-content: center;
@@ -197,6 +142,7 @@ button {
     top: 50%;
     transform: translateY(-52%);
 }
+
 .search-box{
     display: flex;
     justify-content: center;
@@ -204,8 +150,8 @@ button {
     margin: 40px;
 }
 .box{
-    width: 80%;
-    padding: 20px;
+    min-width: 70%;
+    padding-left: 40px;
 }
 
 .search-input{
@@ -215,23 +161,34 @@ button {
 }
 
 .search-input input{
-    width: 100%;
-    height: 40px;
+    width: 80%;
+    height: 50px;
+    justify-content: center;
     font-size: 18px;
     padding-left: 40px;
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0px 10px  10px rgba(0,0,0, 0.7);
+    border: 1px solid grey;
+    border-radius: 25px;
+    box-shadow: 3px 10px  px rgba(0,0,0, 0.3);
 }
 .search-input input:focus{
     outline: none;
-    background-color: #007bff;
 }
 .search-input i{
     position: absolute;
-    left: 15px;
-    top: 50%;
-    transform: translateY(-50%);
+    left:18px;
+    top: 60%;
+    transform: translateY(-40%);
+}
+.search-input button{
+    position: absolute;
+    right: 21%;
+    top: 52%;
+    transform: translateY(-40%);
+    background-color: rgb(54, 206, 163);
+    padding: 12px 20px;
+    color: #000;
+    font-size: 1em;
+    border-radius: 22px;
 }
 .search-input input::placeholder{
     font-size: 16px;
@@ -307,7 +264,6 @@ button {
     top: 50%;
     transform: translateY(-50%);
     border: 2px solid black;
-    background: transparent;
     box-shadow: 0px 10px 10px rgba(0,0,0,0.6);
     z-index: 10;
 }
@@ -321,7 +277,7 @@ button {
     top: 50%;
     transform: translateY(-50%);
     border: 2px solid black;
-    background: transparent;
+    color: white;
     box-shadow: 0px 10px 10px rgba(0,0,0,0.6);
     z-index: 100;
 }
@@ -354,20 +310,67 @@ button {
     position: absolute;
     left: 10px;
     bottom: 10px;
+    color: rgb(25, 0, 255);
     display: flex;
     width: auto;
     margin: 0px;
 }
 .review-container{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+.review-box{
+    display: flex;
+    max-width:100%;
+    gap: 15px;
+}
+.review-container .forward{
+    position: absolute;
+    border: 2px solid black;
+    left: 10px;
+    top: 40%;
+    transform: translateY(-60%);
+    color: #000;
+    font-size: 1rem;
+    z-index: 100;
+}
+.review-container .backward{
+    position: absolute;
+    border: 2px solid black;
+    right: 10px;
+    top: 40%;
+    transform: translateY(-60%);
+    color: #000;
+    font-size: 1rem;
+    z-index: 100;
+}
+.review{
+    min-width: 32.5%;
+}
+.review img{
+    max-width: 100%;
+    min-height: 300px;
+    border-radius:12px;
+}
+.review p{
+    text-align: center;
+    font-size: 16px;
+}
+.review i{
+    margin-left: 50%;
+}
+
+/* .review-container{
     display: flex;
     margin-top: 10%;
     width: 100%;
-    /* border: 5px solid blue; */
     flex-direction: column;
+    position: relative;
+    overflow: hidden;
 }
 .text-review{
     display: block;
-    padding: 0px;
     width: 98%;
 }
 .text-review h2{
@@ -382,8 +385,26 @@ button {
     display: flex;
     gap: 15px;
     width: 100%;
-    overflow: hidden;
-    
+}
+.review-box .forward{
+    position: absolute;
+    left:-20px;
+    top: 30%;
+    border-radius: 20%;
+    transform: translateY(-50%);
+    border: 2px solid black;
+    color: #000;
+    z-index: 100;
+}
+.review-box .backward{
+    position: absolute;
+    right:10px;
+    top: 30%;
+    border-radius: 20%;
+    transform: translateY(-50%);
+    border: 2px solid black;
+    color: #000;
+    z-index: 100;
 }
 .review{
     min-width: 33%;
@@ -392,7 +413,7 @@ button {
 }
 .review img{
     width: 100%;
-    height: auto;
+    height: 250px;
     display: block;
     border-radius: 15px;
 }
@@ -400,6 +421,7 @@ button {
     text-align: center;
     font-size: 18px;
     font-weight: 600;
+    margin: 40px;
 }
 .review a{
     text-decoration: none;
@@ -411,8 +433,54 @@ button {
 }
 .review i{
     left: 50%;
+    top:75%;
     position: absolute;
+} */
+.explore-slider-container{
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+.explore-slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap: 15px;
+    width: 100%; /* Adjust based on number of images */
+}
 
+.explore-slider {
+    min-width: 24%;
+    overflow: hidden;
+    position: relative;
+    
+}
+.explore-slider img {
+    aspect-ratio: 3/4;
+    width: 100%;
+    height: 300px;
+    display: block;
+    border-radius: 15px;
+}
+.explore-slider-container .previous{
+    position: absolute;
+    left:10px;
+    top: 30%;
+    border-radius: 20%;
+    transform: translateY(-50%);
+    border: 2px solid black;
+    color: #000;
+    z-index: 100;
+}
+.explore-slider-container .next-step{
+    position: absolute;
+    right:10px;
+    top: 30%;
+    border-radius: 20%;
+    transform: translateY(-50%);
+    border: 2px solid black;
+    color: #000;
+    z-index: 100;
 }
 .footer-container{
     background-color:#e8e8d8;
