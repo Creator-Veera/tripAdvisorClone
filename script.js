@@ -21,8 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function updateSlider() {
         slideWidth = sliderItems[0].offsetWidth; // Update width dynamically
-        slides.style.transform = `translateX(-${index * 296}px)`;
-
+        slides.style.transform = `translateX(-${index * 296 + (index * 10)}px)`;
         prevBtn.style.display = index === 0 ? "none" : "block";
         nextBtn.style.display = index === totalSlides - 1 ? "none" : "block";
     }
@@ -78,72 +77,36 @@ document.addEventListener("DOMContentLoaded", function () {
 
     Slider();
 });
+
 document.addEventListener("DOMContentLoaded", function () {
-    const s2 = document.querySelector(".review-box");
-    const p2 = document.querySelector(".forward");
-    const n2 = document.querySelector(".backward");
-    const slider2 = document.querySelectorAll(".review");
+    const s2 = document.getElementsByClassName("review-slides")[0];
+    const p2 = document.getElementsByClassName("forward")[0]; 
+    const n2 = document.getElementsByClassName("backward")[0];  
+    const slider2 = document.getElementsByClassName("review");
 
     let j = 0;
     let SW2 = slider2[0].offsetWidth;
-    let totS2 = slider2.length;
+    let totS2 = 4;
 
-    function Sliders() {
-        s2.style.transform = `translateX(-${j * SW2}px)`;
+    function Slider() {
+        s2.style.transform = `translateX(-${j * 400 + (j*10)}px)`;
         p2.style.display = j === 0 ? "none" : "block";
-        n2.style.display = j === totS2 - 3 ? "none" : "block"; // Adjust for visible slides
+        n2.style.display = j === totS2 - 1 ? "none" : "block";
     }
 
-    function move(direc) {
-        if ((direc === -1 && j > 0) || (direc === 1 && j < totS2 - 3)) {
-            j += direc;
+    function move(dir) {
+        if ((dir === -1 && j > 0) || (dir === 1 && j < totS2 - 1)) {
+            j += dir;
         }
-        Sliders();
+        Slider();
     }
-
     p2.addEventListener("click", () => move(-1));
     n2.addEventListener("click", () => move(1));
 
     window.addEventListener("resize", () => {
         SW2 = slider2[0].offsetWidth;
-        Sliders();
+        Slider();
     });
-
-    Sliders();
+    Slider();
 });
-
-
-// document.addEventListener("DOMContentLoaded", function () {
-//     const s2 = document.getElementsByClassName("review-box")[0];
-//     const p2 = document.getElementsByClassName("forward")[0]; 
-//     const n2 = document.getElementsByClassName("backward")[0];  
-//     const slider2 = document.getElementsByClassName("review");
-
-//     let j = 0;
-//     let SW2 = slider2[0].offsetWidth;
-//     let totS2 = 5;
-
-//     function Sliders() {
-//         s2.style.transform = `translateX(-${j * 400}px)`;
-//         p2.style.display = j === 0 ? "none" : "block";
-//         n2.style.display = j === totS1 - 1 ? "none" : "block";
-//     }
-
-//     function move(direc) {
-//         if ((direc === -1 && j > 0) || (direc === 1 && j < totS2 - 1)) {
-//             j += direc;
-//         }
-//         Sliders();
-//     }
-//     p2.addEventListener("click", () => move(-1));
-//     n2.addEventListener("click", () => move(1));
-
-//     window.addEventListener("resize", () => {
-//         SW2 = slider2[0].offsetWidth;
-//         Sliders();
-//     });
-
-//     Sliders();
-// });
-
 
