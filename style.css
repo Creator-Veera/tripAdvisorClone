@@ -321,7 +321,7 @@ button {
     width: 100%;
 }
 .review-slides{
-display: flex;
+    display: flex;
     transition: transform 0.5s ease-in-out;
     gap: 15px;
     width: 100%;
